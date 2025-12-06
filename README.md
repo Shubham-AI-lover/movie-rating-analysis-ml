@@ -74,6 +74,126 @@ The sharp drop at the very end (around the most recent year) is likely due to ve
 <img width="1337" height="714" alt="5" src="https://github.com/user-attachments/assets/8cb89503-e4ab-4cb0-99ba-7526cdaf3d20" />  
 
 Early years have very few ratings, indicating low platform usage or fewer recorded movies.  
-The number of ratings rises sharply, peaks around the late 1990s to early 2000s, then gradually declines, suggesting a boom period when users were most active followed by reduced activity in later years.
+The number of ratings rises sharply, peaks around the late 1990s to early 2000s, then gradually declines, suggesting a boom period when users were most active followed by reduced activity in later years.  
+
+### (D)  
+<img width="1439" height="704" alt="7" src="https://github.com/user-attachments/assets/78e29c5f-6636-4220-873b-6421643b4c2e" />  
+
+Most genres fluctuate around ratings of roughly 3 to 4, meaning that, on average, viewers rate movies similarly across genres, without any single genre consistently dominating.  
+Some years have sharp spikes or drops for particular genres, which often happen when there are only a few movies of that genre in those years, making the average unstable.  
+
+Overall, there is no strong upward or downward trend for any one genre; ratings remain relatively stable over time, suggesting that genre popularity in terms of rating is fairly consistent across decades.  
+
+### (E) 
+<img width="1023" height="608" alt="11" src="https://github.com/user-attachments/assets/7b0a5887-72cf-4206-b21d-c7f3a3097e48" /><img width="1118" height="921" alt="12" src="https://github.com/user-attachments/assets/0e03a319-edf2-4077-a7f8-6ebfc590eef0" />  
+
+Drama and Comedy dominate the dataset, suggesting that these genres are produced significantly more often. Action and Thriller also show strong representation. On the other hand, niche genres like Children and Fantasy are far less common, indicating smaller production volume.  
+
+While Film-Noir and Documentary genres are produced far less frequently, they receive the highest average ratings, suggesting that niche genres tend to be more critically appreciated. Drama appears in both charts, indicating it is not only widely produced but also relatively well-rated.  
+
+There is a clear difference between **popularity (frequency) and quality (ratings).**  
+  
+**Popular genres**: Drama, Comedy, Action, Thriller  
+**Highly rated genres**: Film-Noir, War, Documentary, Crime  
+
+This means:  
+  
+Audiences appreciate certain niche genres more.  
+Highly produced genres do not always receive the highest ratings.  
+Drama is the only genre that is both high in count and above-average in rating — showing its strong overall performance.  
+
+## 5 Feature Engineering  
+
+**Added critical predictive features**:  
+   movie_avg_rating  
+   user_avg_rating  
+   movie_rating_count  
+   user_rating_count  
+
+**Extracted**:  
+   Movie year  
+   Rating year  
+   Rating month  
+   
+**Purpose**: Improve model accuracy  
+
+ ## 6 Machine Learning Approach  
+
+**Objective**: Predict movie ratings using supervised learning  
+
+**Models used**:
+  Linear Regression  
+  Ridge Regression  
+  Lasso Regression    
+  
+**Split**: 80% train / 20% test  
+
+**Encoding**: OrdinalEncoder with unknown_value=-1  
+
+## 7 Model Development Steps  
+
+Training features selected  
+Handled unseen user/movie IDs  
+Trained Linear, Ridge, and Lasso models  
+Evaluated using Root Mean Squared Error (RMSE)  
+Compared three models side-by-side  
+
+## 8 Model Evaluation (RMSE Results)
+**Model           	RMSE**  
+Linear Regression	0.7546  
+Ridge Regression	0.7546  
+Lasso Regression	0.7547  
+
+**Interpretation:**  
+Regression models perform similarly due to clean numeric feature space  
+RMSE ≈ 0.75 → Very strong baseline for rating prediction  
+Indicates consistent model performance  
+Dataset is simple → regularization makes little difference  
+Good baseline before using advanced recommenders (SVD, NCF, LightFM)  
+
+## Key Insights from ML  
+
+ Users and movies have strong rating patterns  
+ Movie and user averages are powerful predictors  
+ Linear models work very well for a basic recommender  
+ Ridge/Lasso do not improve much due to simple feature space  
+
+ ## 📦 Technologies Used  
+
+Python  
+Pandas, NumPy  
+Matplotlib, Seaborn  
+Scikit-learn  
+Jupyter Notebook  
+
+## 🏁 Next Steps (Future Improvements)
+
+You can extend this project by adding:  
+
+🔸 **Collaborative Filtering (SVD)**  
+
+For better predictions.  
+
+🔸 **Deep Learning Models**  
+
+Neural Collaborative Filtering (NCF).  
+
+🔸 **Web App Deployment**  
+
+Using Streamlit or Flask.  
+
+🔸 **More Feature Engineering**  
+
+Incorporate genre encoding, sentiment from titles, movie age, etc.  
+
+
+
+### Author  
+Shubham Sharma  
+Data Analyst | Python Enthusiast | ML Beginner  
+
+<img width="360" height="217" alt="Thank you" src="https://github.com/user-attachments/assets/adf398f6-d14a-400a-bc3a-5f07287d2fa3" />
+
+
 
 
