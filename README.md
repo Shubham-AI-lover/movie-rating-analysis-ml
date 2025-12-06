@@ -39,7 +39,7 @@ Converting timestamp to date
 ## 3 Data Cleaning  
 
 Extracted **year** from title using regex  
-Handled **405 missing year** values using median   
+Handled **405 missing year** values using mode     
 Converted timestamp → datetime  
 Split genres column into lists  
 Renamed columns  
